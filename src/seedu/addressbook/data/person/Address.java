@@ -23,17 +23,19 @@ public class Address {
     public Address(String address, boolean isPrivate) throws IllegalValueException {
         String trimmedAddress = address.trim();
         this.isPrivate = isPrivate;
-        if (!isValidAddress(trimmedAddress)) {
-            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
-        }
-        this.value = trimmedAddress;
+//        if (!isValidAddress(trimmedAddress)) {
+//            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+//        }
+//        this.value = trimmedAddress;
 
-//
-//        String[] addressArr = address.split(",");
-//        Block block = new Block(addressArr[0], isPrivate);
-//        Street street = new Street(addressArr[1], isPrivate);
-//        Unit unit = new Unit(addressArr[2], isPrivate);
-//        PostalCode postal = new PostalCode(addressArr[3], isPrivate);
+        String[] addressArr = trimmedAddress.split(",");
+        Block block = new Block(addressArr[0], isPrivate);
+        Street street = new Street(addressArr[1], isPrivate);
+        Unit unit = new Unit(addressArr[2], isPrivate);
+        PostalCode postal = new PostalCode(addressArr[3], isPrivate);
+        String addr = block.toString() + " " + street.toString() + " " + unit.toString() + " " + postal.toString();
+        this.value = addr;
+
     }
 
     /**
