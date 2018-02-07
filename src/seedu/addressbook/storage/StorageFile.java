@@ -52,6 +52,12 @@ public class StorageFile {
         }
     }
 
+    public static class StorageReadOnlyException extends StorageOperationException {
+        public StorageReadOnlyException(String message) {
+            super(message + "Storage file is in read only");
+        }
+    }
+
     private final JAXBContext jaxbContext;
 
     public final Path path;
@@ -104,9 +110,8 @@ public class StorageFile {
             final Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(toSave, fileWriter);
-
         } catch (IOException ioe) {
-            throw new StorageOperationException("Error writing to file: " + path);
+            throw new StorageReadOnlyException("Error writing to file: " + path + ", ");
         } catch (JAXBException jaxbe) {
             throw new StorageOperationException("Error converting address book into storage format");
         }
@@ -138,7 +143,7 @@ public class StorageFile {
 
         } catch (FileNotFoundException fnfe) {
             throw new AssertionError("A non-existent file scenario is already handled earlier.");
-        // other errors
+            // other errors
         } catch (IOException ioe) {
             throw new StorageOperationException("Error writing to file: " + path);
         } catch (JAXBException jaxbe) {
