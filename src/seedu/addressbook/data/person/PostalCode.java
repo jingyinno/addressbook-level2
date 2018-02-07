@@ -15,7 +15,7 @@ public class PostalCode {
     }
 
     /**
-     * Returns true if a given string is a valid person address.
+     * Returns true if a given string is a valid person postal code.
      */
     public static boolean isValidPostal(String test) {
         return test.matches(POSTAL_VALIDATION_REGEX);

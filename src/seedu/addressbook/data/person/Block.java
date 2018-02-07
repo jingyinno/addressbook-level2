@@ -2,7 +2,7 @@ package seedu.addressbook.data.person;
 
 public class Block {
 
-    public static final String EXAMPLE = "123, some street";
+    public static final String EXAMPLE = "123";
     public static final String MESSAGE_BLOCK_CONSTRAINTS = "";
     public static final String BLOCK_VALIDATION_REGEX = ".+";
 
@@ -16,7 +16,7 @@ public class Block {
     }
 
     /**
-     * Returns true if a given string is a valid person address.
+     * Returns true if a given string is a valid person block.
      */
     public static boolean isValidBlock(String test) {
         return test.matches(BLOCK_VALIDATION_REGEX);

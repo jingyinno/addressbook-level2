@@ -2,7 +2,7 @@ package seedu.addressbook.data.person;
 
 public class Street {
 
-    public static final String EXAMPLE = "street name";
+    public static final String EXAMPLE = "Street name";
     public static final String MESSAGE_STREET_CONSTRAINTS = "";
     public static final String STREET_VALIDATION_REGEX = ".+";
 
@@ -16,7 +16,7 @@ public class Street {
     }
 
     /**
-     * Returns true if a given string is a valid person address.
+     * Returns true if a given string is a valid person street.
      */
     public static boolean isValidStreet(String test) {
         return test.matches(STREET_VALIDATION_REGEX);

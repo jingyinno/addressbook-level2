@@ -15,7 +15,7 @@ public class Unit {
     }
 
     /**
-     * Returns true if a given string is a valid person address.
+     * Returns true if a given string is a valid person unit.
      */
     public static boolean isValidUnit(String test) {
         return test.matches(UNIT_VALIDATION_REGEX);
