@@ -16,6 +16,7 @@ public class Address {
     public static final int STREET_INDEX = 1;
     public static final int UNIT_INDEX = 2;
     public static final int POSTAL_INDEX = 3;
+    public static final int SIZE = 4;
 
     public String value;
     private boolean isPrivate;
@@ -28,12 +29,13 @@ public class Address {
     public Address(String address, boolean isPrivate) throws IllegalValueException {
         String trimmedAddress = address.trim();
         this.isPrivate = isPrivate;
-//        if (!isValidAddress(trimmedAddress)) {
-//            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
-//        }
+        String[] addressArr = trimmedAddress.split(",");
+
+        if (!isValidAddress(addressArr)) {
+            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+        }
 //        this.value = trimmedAddress;
 
-        String[] addressArr = trimmedAddress.split(",");
         Block block = new Block(addressArr[BLOCK_INDEX], isPrivate);
         Street street = new Street(addressArr[STREET_INDEX], isPrivate);
         Unit unit = new Unit(addressArr[UNIT_INDEX], isPrivate);
@@ -46,9 +48,7 @@ public class Address {
     /**
      * Returns true if a given string is a valid person address.
      */
-    public static boolean isValidAddress(String test) {
-        return test.matches(ADDRESS_VALIDATION_REGEX);
-    }
+    public static boolean isValidAddress(String[] test) { return test.length == SIZE; }
 
     @Override
     public String toString() {
