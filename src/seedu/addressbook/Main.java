@@ -55,6 +55,7 @@ public class Main {
     private void start(String[] launchArgs) {
         try {
             this.ui = new TextUi();
+            this.formatter = new Formatter();
             this.storage = initializeStorage(launchArgs);
             this.addressBook = storage.load();
             formatter.showWelcomeMessage(VERSION, storage.getPath());
