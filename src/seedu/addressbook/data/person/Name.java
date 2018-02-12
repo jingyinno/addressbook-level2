@@ -9,7 +9,7 @@ import java.util.List;
  * Represents a Person's name in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
  */
-public class Name {
+public class Name implements Comparable<Name> {
 
     public static final String EXAMPLE = "John Doe";
     public static final String MESSAGE_NAME_CONSTRAINTS = "Person names should be spaces or alphabetic characters";
@@ -27,6 +27,14 @@ public class Name {
             throw new IllegalValueException(MESSAGE_NAME_CONSTRAINTS);
         }
         this.fullName = trimmedName;
+    }
+
+    /**
+     * Returns positive number if this.fullName is lexicographically larger
+     */
+    public int compareTo(Name otherName) {
+        //if fullName > otherName.fullName: > 0
+        return fullName.compareToIgnoreCase(otherName.fullName);
     }
 
     /**
