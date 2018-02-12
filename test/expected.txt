@@ -25,6 +25,8 @@
 || viewall: Views the non-private details of the person identified by the index number in the last shown person listing.
 || Parameters: INDEX
 || Example: viewall 1
+|| Sorts Address book in alphabetical order.
+|| Example: sort
 || help: Shows program usage instructions.
 || Example: help
 || exit: Exits the program.
@@ -296,6 +298,22 @@
 || Enter command: || [Command entered:  list]
 || 
 || 0 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  add D p/123 e/d@d.com a/123 Computing #01-01 12345]
+|| New person added: D Phone: 123 Email: d@d.com Address: 123 Computing #01-01 12345 Tags: 
+|| ===================================================
+|| Enter command: || [Command entered:  add Z p/123 e/z@a.com a/123 Computing #01-01 12345]
+|| New person added: Z Phone: 123 Email: z@a.com Address: 123 Computing #01-01 12345 Tags: 
+|| ===================================================
+|| Enter command: || [Command entered:  add A p/123 e/a@a.com a/123 Computing #01-01 12345]
+|| New person added: A Phone: 123 Email: a@a.com Address: 123 Computing #01-01 12345 Tags: 
+|| ===================================================
+|| Enter command: || [Command entered:  sort]
+|| 	1. A Phone: 123 Email: a@a.com Address: 123 Computing #01-01 12345 Tags: 
+|| 	2. D Phone: 123 Email: d@d.com Address: 123 Computing #01-01 12345 Tags: 
+|| 	3. Z Phone: 123 Email: z@a.com Address: 123 Computing #01-01 12345 Tags: 
+|| 
+|| 3 persons listed!
 || ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book as requested ...
