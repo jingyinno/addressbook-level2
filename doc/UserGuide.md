@@ -57,8 +57,8 @@ Format: `list`
 Shows a sorted list of all persons in the address book.<br>
 Format: `sort`
 
-### Finding all persons containing any keyword in their name: `find`
-Finds persons whose names contain any of the given keywords.<br>
+### Finding all persons containing any keyword in their name or tags: `find`
+Finds persons whose names or tags contain any of the given keywords.<br>
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
 > The search is case sensitive, the order of the keywords does not matter, only the name is searched, 
@@ -69,6 +69,8 @@ Examples:
   Returns `John Doe` but not `john`
 * `find Betsy Tim John`<br>
   Returns Any person having names `Betsy`, `Tim`, or `John`
+* `find friend`<br>
+  Returns Any person having tags `friend`
 
 ### Deleting a person : `delete`
 Deletes the specified person from the address book. Irreversible.<br>
