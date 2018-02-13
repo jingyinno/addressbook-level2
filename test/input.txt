@@ -105,6 +105,8 @@
   find Dickson
   # find multiple with some keywords
   find Charlie Betsy
+  # find unique keyword
+    find secretive
 
 ##########################################################
 # test delete person command
