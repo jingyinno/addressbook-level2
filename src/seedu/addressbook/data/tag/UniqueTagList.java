@@ -59,6 +59,17 @@ public class UniqueTagList implements Iterable<Tag> {
     }
 
     /**
+     * Retrieves a listing of every word in the tag, in order.
+     */
+    public List<String> getWordsInTag() {
+        List<String> tagList = new ArrayList<String>();
+        for (int i = 0 ; i < internalList.size(); i++) {
+            tagList.add(internalList.get(i).tagName);
+        }
+        return tagList;
+    }
+
+    /**
      * Constructs a tag list with the given tags.
      */
     public UniqueTagList(Set<Tag> tags) {
