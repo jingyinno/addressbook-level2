@@ -12,6 +12,7 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
+import seedu.addressbook.commands.SortCommand;
 import seedu.addressbook.commands.AddCommand;
 import seedu.addressbook.commands.ClearCommand;
 import seedu.addressbook.commands.Command;
@@ -80,6 +81,12 @@ public class ParserTest {
     public void parse_listCommand_parsedCorrectly() {
         final String input = "list";
         parseAndAssertCommandType(input, ListCommand.class);
+    }
+
+    @Test
+    public void parse_SortCommand_parsedCorrectly() {
+        final String input = "sort";
+        parseAndAssertCommandType(input, SortCommand.class);
     }
 
     @Test
